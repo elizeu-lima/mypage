@@ -98,8 +98,8 @@
 @media screen and (max-width: 480px) {
   .Intro {
     flex-direction: column;
-    gap: 17rem;
-    height: 44rem;
+    gap: 5rem;
+    height: 84rem;
   }
 
   .i-right {
