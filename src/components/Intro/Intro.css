@@ -101,7 +101,13 @@
     gap: 7rem;
     height: 64rem;
   }
-
+  .i-right > :nth-child(3) {
+    transform: scale(2);
+    left: 65%;
+    bottom: 35%;
+    border-radius: 1.5rem;
+  }
+  
   .i-right {
     transform: scale(0.8);
     left: -3rem;
