@@ -23,7 +23,7 @@ const Works = () => {
           <span style={{ color: darkMode ? "white" : "" }}>
              Apenas Para
           </span>
-          <span>Demosntração</span>
+          <span>Demonstração</span>
           <spane>
             Utilizei para fins de ilustar 
             minha habilidade com as logos.
