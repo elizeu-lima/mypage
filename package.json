@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emailjs/browser": "^3.4.0",
+    "@emailjs/browser": "^3.10.0",
     "@iconscout/react-unicons": "^1.1.6",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^12.0.0",
@@ -42,7 +42,6 @@
   },
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "Context.js",
-  "devDependencies": {},
   "author": "Elizeu",
   "license": "ISC"
 }
