@@ -1,6 +1,6 @@
 import React, { useContext, useRef, useState } from "react";
 import "./Contact.css";
-import emailjs from "@emailjs/browser";
+import emailjs, { send } from "@emailjs/browser";
 import { themeContext } from "../../Context";
 
 const Contact = () => {
@@ -8,13 +8,25 @@ const Contact = () => {
   const darkMode = theme.state.darkMode;
   const [done, setDone] = useState(false)
   const form = useRef();
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    if(name === '' || email === '' || message === ''){
+      alert("Preencha todos os campos");
+      return;
+    }
+
     emailjs.sendForm('service_7ydndgf', 'template_j7yavad', form.current, 'FissFCWM5qYZhndns')
       .then((result) => {
         console.log(result.text);
+        setName('')
+        setEmail('')
+        setMessage('')
       }, (error) => {
         console.log(error.text);
       });
@@ -38,11 +50,20 @@ const Contact = () => {
 
       <div className='c-right'>
         <form ref={form} onSubmit={sendEmail}>
-          <input type="text" name="user_name" className="user" placeholder="Name" />
-          <input type="email" name="user_email" className="user" placeholder="Email" />
-          <textarea name="message" className="user" placeholder="Message" />
-          <input type="submit" value="Send" className="button" />
-          <span>{done && "Thanks for Contacting me"}</span>
+          <input type="text" name="user_name" className="user" placeholder="Name" 
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+          />
+          <input type="email" name="user_email" className="user" placeholder="Email" 
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          />
+          <textarea name="message" className="user" placeholder="Message" 
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
+          />
+          <input type="submit" value="Send" className="button"/>
+          <span>{done &&  "Obrigado Pela mensagem"}</span>
           <div
             className="blur c-blur1"
             style={{ background: "var(--purple)" }}
