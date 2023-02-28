@@ -24,16 +24,19 @@ const Contact = () => {
     emailjs.sendForm('service_7ydndgf', 'template_j7yavad', form.current, 'FissFCWM5qYZhndns')
       .then((result) => {
         console.log(result.text);
+        alert("Email Enviado Com Sucesso!")
         setName('')
         setEmail('')
         setMessage('')
       }, (error) => {
         console.log(error.text);
       });
+
+   
   };
 
   return (
-    <div className='contact-form'>
+    <div className='contact-form' id="contact">
 
       {/* left side copy and paste from work section */}
       <div className="w-left">
@@ -63,6 +66,7 @@ const Contact = () => {
           value={message}
           />
           <input type="submit" value="Send" className="button"/>
+       
           <span>{done &&  "Obrigado Pela mensagem"}</span>
           <div
             className="blur c-blur1"
